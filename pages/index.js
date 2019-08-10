@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
+
+import '../styles/base.scss';
+
 export default () => (
     <ul>
         <li>
