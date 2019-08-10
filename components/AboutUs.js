@@ -15,8 +15,8 @@ export default () => {
                     learning and having fun then we want you in!
                 </p>
                 <p>
-                    Come classic we plan on raiding 2-3 nights a week depending
-                    on how much content is out.
+                    We have 2 dedicated raid nights a week as well as hosting
+                    other events.
                 </p>
                 <p>
                     Main days will be <strong>Wed/Thurs/Sun 7-11pm st</strong>,
@@ -26,7 +26,6 @@ export default () => {
                     With this we expect our players to get to 60 in a timely
                     manner and do plenty of their own research of their classes.
                 </p>
-                <p>We will be rolling on a PVP server come classic.</p>
 
                 <Link href="/apply">
                     <button className="proto-btn">Click here to apply!</button>

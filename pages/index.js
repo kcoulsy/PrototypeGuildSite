@@ -15,6 +15,7 @@ export default () => (
             <div className="proto-hero">
                 <img src="/static/images/logo.png" alt="Prototype Guild Logo" />
                 <h2>A Classic WoW guild</h2>
+                <h3>Golemagg - EU PVP</h3>
             </div>
             <Recruitment />
             <RaidProgress />

@@ -140,7 +140,7 @@ export default () => {
                     </p>
                     <h3>Trial Officer</h3>
                     <p>
-                        A new officer, like raiders we will trail out officers
+                        A new officer, like raiders we will trial out officers
                         to make sure they are the right fit. Have the same
                         responsibilities as other officers.
                     </p>
@@ -151,14 +151,14 @@ export default () => {
                         of gearing and rotation, providing information to keep
                         players performance up. In raids responsible for class
                         assignments ( tranq shot rotations or tank assignments
-                        etc…) Should be the first point of contact for any class
+                        etc… ) Should be the first point of contact for any class
                         related issues.
                     </p>
                     <h3>Veteran</h3>
                     <p>
                         Proven core member of the raid team. Well skilled
                         players who have an exceptional attendance. Will be
-                        priorities for raid invites as they can be trusted.
+                        prioritised for raid invites as they can be trusted.
                     </p>
                     <h3>Raider</h3>
                     <p>
@@ -171,10 +171,10 @@ export default () => {
                         Prospective raiders. Generally lasts 2-4 weeks, in this
                         time you must maintain a high attendance and perform
                         well. You will have a trial evaluation and feedback will
-                        be given. Will learn less EPGP, but will still earn it.
+                        be given.
                     </p>
                     <h3>Members</h3>
-                    <p>Social members of the guild.</p>
+                    <p>Social members of the guild. Has the option to trial for the team.</p>
                 </Panel>
             </div>
         </div>
