@@ -2,6 +2,7 @@ import React from 'react';
 
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
+import Recruitment from '../components/Recruitment';
 import '../styles/index.scss';
 
 export default () => (
@@ -13,6 +14,7 @@ export default () => (
                 <img src="/static/images/logo.png" alt="Prototype Guild Logo" />
                 <h2>A Classic WoW guild</h2>
             </div>
+            <Recruitment />
         </div>
     </div>
 );
