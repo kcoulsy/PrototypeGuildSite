@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 
-
+import Head from '../components/head';
 import '../styles/base.scss';
 
 export default () => (
-    <ul>
-        <li>
-            <Link href="/b" as="/a">
-                <a>a</a>
-            </Link>
-        </li>
-        <li>
-            <Link href="/a" as="/b">
-                <a>b</a>
-            </Link>
-        </li>
-        <li>
-            <Link
-                href={{ pathname: '/posts', query: { id: '2' } }}
-                as="/posts/2"
-            >
-                <a>post #2</a>
-            </Link>
-        </li>
-    </ul>
+    <Fragment>
+        <Head />
+
+        <ul>
+            <li>
+                <Link href="/b" as="/a">
+                    <a>a</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/a" as="/b">
+                    <a>b</a>
+                </Link>
+            </li>
+            <li>
+                <Link
+                    href={{ pathname: '/posts', query: { id: '2' } }}
+                    as="/posts/2"
+                >
+                    <a>post #2</a>
+                </Link>
+            </li>
+        </ul>
+    </Fragment>
 );
