@@ -1,0 +1,29 @@
+@import '../constants';
+
+.proto-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3px 20px;
+    height: 50px;
+    border-bottom: 1px solid $proto-grey-blue;
+    background-color: $proto-transparent-black;
+    box-sizing: border-box;
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .nav-item {
+        color: $proto-light-grey;
+        font-size: 20px;
+        padding: 10px;
+        display: inline-block;
+        cursor: pointer;
+        &:hover {
+            color: $proto-off-white;
+        }
+    }
+}

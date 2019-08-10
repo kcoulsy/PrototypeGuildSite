@@ -2,31 +2,12 @@ import React, { Fragment } from 'react';
 import Link from 'next/link';
 
 import Head from '../components/head';
-import '../styles/base.scss';
+import Navbar from '../components/Navbar';
+import '../styles/index.scss';
 
 export default () => (
     <Fragment>
         <Head />
-
-        <ul>
-            <li>
-                <Link href="/b" as="/a">
-                    <a>a</a>
-                </Link>
-            </li>
-            <li>
-                <Link href="/a" as="/b">
-                    <a>b</a>
-                </Link>
-            </li>
-            <li>
-                <Link
-                    href={{ pathname: '/posts', query: { id: '2' } }}
-                    as="/posts/2"
-                >
-                    <a>post #2</a>
-                </Link>
-            </li>
-        </ul>
+        <Navbar />
     </Fragment>
 );

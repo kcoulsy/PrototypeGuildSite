@@ -1,0 +1,34 @@
+// colors
+$proto-white: #dcdcdc;
+$proto-off-white: #c0d1d4;
+$proto-light-grey: #9fafbd;
+$proto-grey-blue: #627284;
+$proto-green: #158e45;
+$proto-red: #8e2e2e;
+$proto-blue: #30bbe3;
+
+$proto-dark-blue: #1b1c23;
+$proto-border-color: rgba(255, 255, 255, 0.15);
+$proto-transparent-white: rgba(255, 255, 255, 0.15);
+$proto-transparent-black: hsla(0, 0%, 100%, 0.05);
+$proto-transparent-blue: rgba(99, 132, 154, 0.2);
+$proto-transparent-dark-blue: rgba(30, 31, 38, 0.78);
+
+// border
+$proto-border-standard: 1px solid $proto-transparent-white;
+$proto-border-blue: 1px solid $proto-transparent-dark-blue;
+
+
+// class colours
+$warrior: #5f4933;
+$warlock: #5e5ea0;
+$shaman: #0070DE;
+$rogue: #9c9745;
+$priest: #d6d6d6;
+$paladin: #ab6986;
+$mage: #438596;
+$hunter: #6b824b;
+$druid: #b7773e;
+
+// sizes
+$container-width: 960px;
