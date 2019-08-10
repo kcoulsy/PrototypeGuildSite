@@ -9,6 +9,14 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
     const server = express();
 
+    server.get('/', (req, res) => {
+        return app.render(req, res, '/', {
+            recruitment: {
+                warrior: 1
+            }
+        })
+      })
+
     server.get('*', (req, res) => {
         return handle(req, res);
     });
