@@ -3,6 +3,7 @@ import React from 'react';
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Recruitment from '../components/Recruitment';
+import RaidProgress from '../components/RaidProgress';
 import '../styles/index.scss';
 
 export default () => (
@@ -15,6 +16,7 @@ export default () => (
                 <h2>A Classic WoW guild</h2>
             </div>
             <Recruitment />
+            <RaidProgress />
         </div>
     </div>
 );
