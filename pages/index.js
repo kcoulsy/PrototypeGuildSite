@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import '../styles/index.scss';
 
 export default () => (
-    <Fragment>
+    <div className="page-index">
         <Head />
         <Navbar />
         <div className="content">
@@ -14,5 +14,5 @@ export default () => (
                 <h2>A Classic WoW guild</h2>
             </div>
         </div>
-    </Fragment>
+    </div>
 );
