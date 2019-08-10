@@ -4,6 +4,7 @@ import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Recruitment from '../components/Recruitment';
 import RaidProgress from '../components/RaidProgress';
+import AboutUs from '../components/AboutUs';
 import '../styles/index.scss';
 
 export default () => (
@@ -17,6 +18,7 @@ export default () => (
             </div>
             <Recruitment />
             <RaidProgress />
+            <AboutUs />
         </div>
     </div>
 );

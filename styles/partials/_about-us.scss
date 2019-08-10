@@ -1,0 +1,13 @@
+@import '../constants';
+
+section.about-us {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    > h2 {
+        color: $proto-white;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 26px;
+    }
+}
