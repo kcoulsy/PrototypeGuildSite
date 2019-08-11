@@ -13,7 +13,8 @@ export default class Index extends Component {
     }
 
     render() {
-        const { recruitment } = this.props;
+        const { recruitment, progress } = this.props;
+
         return (
             <div className="page-index">
                 <Head />
@@ -28,7 +29,7 @@ export default class Index extends Component {
                         <h3>Golemagg - EU PVP</h3>
                     </div>
                     <Recruitment recruitment={recruitment} />
-                    <RaidProgress />
+                    <RaidProgress progress={progress} />
                     <AboutUs />
                 </div>
             </div>

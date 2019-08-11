@@ -14,7 +14,7 @@ export default () => {
                     </Link>
                 </div>
                 <div className="nav-right">
-                    <a href="https://discord.gg/GrYHnP" className="nav-item right">Discord</a>
+                    <a href="https://discord.gg/5YCTZ7K" className="nav-item right">Discord</a>
                     <Link href="/apply">
                         <div className="nav-item right">Apply</div>
                     </Link>

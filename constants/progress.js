@@ -16,7 +16,7 @@ module.exports = {
     },
     zg: {
         name: 'ZG',
-        done: 0,
+        done: 6,
         of: 10
     },
     aq20: {

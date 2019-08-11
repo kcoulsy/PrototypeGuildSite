@@ -1,7 +1,6 @@
 import React from 'react';
-import progress from '../constants/progress';
 
-export default () => (
+export default ({ progress }) => (
     <section className="progress">
         <h2>Raid Progress</h2>
         <div className="progress">

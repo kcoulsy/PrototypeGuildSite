@@ -1,0 +1,26 @@
+@import '../constants';
+
+.proto-form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    &.form-apply {
+        max-width: 600px;
+    }
+    input,
+    select,
+    textarea {
+        padding: 10px;
+        color: $proto-light-grey;
+        font-size: 20px;
+        background: $proto-transparent-dark-blue;
+        border: $proto-border-standard;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+    &.full-width {
+        max-width: 100%;
+    }
+}

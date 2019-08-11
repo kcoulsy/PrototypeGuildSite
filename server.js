@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const progressValues = require('./constants/progress');
+
 app.prepare().then(() => {
     const server = express();
 
@@ -13,7 +15,8 @@ app.prepare().then(() => {
         return app.render(req, res, '/', {
             recruitment: {
                 warrior: 1
-            }
+            },
+            progress: progressValues
         })
       })
 
