@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
+import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Panel from '../components/Panel';
 
@@ -49,7 +51,14 @@ export default class Apply extends Component {
 
         ev.preventDefault();
 
-        if (this.validate()) {
+        // if (this.validate()) {
+            if (true) {
+                debugger;
+                axios({
+                    method: 'post',
+                    url: `apply/submit`,
+                    data
+                })
             //     auth.api('post', '/users', {
             //         data
             //     }).then(() => {
@@ -107,6 +116,7 @@ export default class Apply extends Component {
         if (hasSubmitted) {
             return (
                 <div>
+                    <Head />
                     <Navbar />
                     <div className="content">
                         <Panel title="Success" styleName="panel-sm text-center">

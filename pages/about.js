@@ -1,10 +1,13 @@
 import React from 'react';
+
+import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Panel from '../components/Panel';
 
 export default () => {
     return (
         <div className="page-about">
+            <Head />
             <Navbar />
             <div className="content">
                 <Panel title="Guild Philosophy" styleName="">

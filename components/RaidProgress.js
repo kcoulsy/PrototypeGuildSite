@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ progress }) => (
+export default ({ progress = [] }) => (
     <section className="progress">
         <h2>Raid Progress</h2>
         <div className="progress">
