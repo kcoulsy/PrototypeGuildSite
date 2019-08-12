@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
@@ -11,8 +12,22 @@ export default class Index extends Component {
         return query;
     }
 
+    state = {
+        recruitment: {},
+        progress: {}
+    }
+
+    componentDidMount() {
+        axios({ url: '/recruitment', method: 'get' }).then(({ data }) => {
+            this.setState({ recruitment: data });
+        });
+        axios({ url: '/progress', method: 'get' }).then(({ data }) => {
+            this.setState({ progress: data });
+        });
+    }
+
     render() {
-        const { recruitment, progress } = this.props;
+        const { recruitment, progress } = this.state;
 
         return (
             <div className="page-index">
