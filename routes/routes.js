@@ -1,15 +1,18 @@
 const express = require('express');
 
+const { Progress } = require('../models');
 const Apply = require('./Apply');
 
 const router = express.Router();
 
 router.post('/apply/submit', Apply.submit);
 
-const prog = require('../constants/progress');
-
 router.get('/progress', (req, res) => {
-    res.send(prog);
+    Progress.findAll()
+        .then(progress => {
+            res.send(progress);
+        })
+        .catch(e => res.status(400).send());
 });
 
 router.get('/recruitment', (req, res) => {

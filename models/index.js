@@ -3,18 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-
 const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
-const { MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE, MYSQL_HOST } = process.env;
-const config = {
-    username: MYSQL_USER,
-    password: MYSQL_PASS,
-    database: MYSQL_DATABASE,
-    host: MYSQL_HOST,
-    dialect: 'mysql',
-    operatorsAliases: false,
-};
 
 let sequelize;
 if (config.use_env_variable) {
