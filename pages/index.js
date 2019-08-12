@@ -14,7 +14,7 @@ export default class Index extends Component {
 
     state = {
         recruitment: {},
-        progress: {}
+        progress: []
     }
 
     componentDidMount() {

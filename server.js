@@ -10,7 +10,6 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const { sequelize } = require('./models');
-const progressValues = require('./constants/progress');
 // Test DB
 sequelize
     .authenticate()
@@ -23,15 +22,6 @@ app.prepare().then(() => {
     server.use(bodyParser.json({ limit: '50mb' }));
     server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
     server.use(require('./routes/routes'));
-
-    server.get('/', (req, res) => {
-        return app.render(req, res, '/', {
-            recruitment: {
-                warrior: 1,
-            },
-            progress: progressValues,
-        });
-    });
 
     server.get('*', (req, res) => {
         return handle(req, res);
