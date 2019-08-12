@@ -2,6 +2,8 @@ const express = require('express');
 const next = require('next');
 const bodyParser = require('body-parser');
 
+require('dotenv').config();
+
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -14,6 +16,7 @@ app.prepare().then(() => {
 
     server.use(bodyParser.json({ limit: '50mb' }));
     server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+    server.use(require('./routes/routes'));
 
     server.get('/', (req, res) => {
         return app.render(req, res, '/', {
@@ -22,11 +25,6 @@ app.prepare().then(() => {
             },
             progress: progressValues,
         });
-    });
-
-    server.post('/apply/submit', (req, res) => {
-        console.log(req.body);
-        res.send({ value: 'hello' });
     });
 
     server.get('*', (req, res) => {
