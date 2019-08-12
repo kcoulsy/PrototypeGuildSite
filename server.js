@@ -9,7 +9,13 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const { sequelize } = require('./models');
 const progressValues = require('./constants/progress');
+// Test DB
+sequelize
+    .authenticate()
+    .then(() => console.log('DB conntected'))
+    .catch(e => console.log(e));
 
 app.prepare().then(() => {
     const server = express();
