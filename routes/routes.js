@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Progress } = require('../models');
+const { Progress, Recruitment } = require('../models');
 const Apply = require('./Apply');
 
 const router = express.Router();
@@ -16,16 +16,11 @@ router.get('/progress', (req, res) => {
 });
 
 router.get('/recruitment', (req, res) => {
-    res.send({
-        warrior: 1,
-        paladin: 1,
-        hunter: 1,
-        druid: 1,
-        rogue: 1,
-        mage: 1,
-        priest: 1,
-        warlock: 1,
-    });
+    Recruitment.findAll()
+        .then(recruitment => {
+            res.send(recruitment);
+        })
+        .catch(e => res.status(400).send());
 });
 
 module.exports = router;

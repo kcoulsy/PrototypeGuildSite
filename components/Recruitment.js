@@ -3,24 +3,22 @@ import Link from 'next/link';
 
 import classes from '../constants/classes';
 
-export default ({ recruitment = {} }) => {
+export default ({ recruitment = [] }) => {
     return (
         <div className="proto-recruitment-icons">
             <h2>Recruitment</h2>
             <div className="icons">
-                {Object.entries(classes).map(([key, value]) => {
-                    const isRecruiting = recruitment[key] || false;
-
+                {recruitment.map(({id, name, enabled}) => {
                     return (
-                        <Link href="/apply" key={key}>
+                        <Link href="/apply" key={id}>
                             <div className="icon">
                                 <img
-                                    src={`/static/images/classes/${value.name.toLowerCase()}.png`}
-                                    alt={value.name}
+                                    src={`/static/images/classes/${name.toLowerCase()}.png`}
+                                    alt={name}
                                 />
                                 <span
                                     className={`status ${
-                                        isRecruiting ? 'open' : 'closed'
+                                        enabled ? 'open' : 'closed'
                                     }`}
                                 />
                             </div>
