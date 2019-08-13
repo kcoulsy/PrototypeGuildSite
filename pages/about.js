@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Head from '../components/head';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Panel from '../components/Panel';
 
@@ -154,8 +155,8 @@ export default () => {
                         of gearing and rotation, providing information to keep
                         players performance up. In raids responsible for class
                         assignments ( tranq shot rotations or tank assignments
-                        etc… ) Should be the first point of contact for any class
-                        related issues.
+                        etc… ) Should be the first point of contact for any
+                        class related issues.
                     </p>
                     <h3>Veteran</h3>
                     <p>
@@ -177,8 +178,12 @@ export default () => {
                         be given.
                     </p>
                     <h3>Members</h3>
-                    <p>Social members of the guild. Has the option to trial for the team.</p>
+                    <p>
+                        Social members of the guild. Has the option to trial for
+                        the team.
+                    </p>
                 </Panel>
+                <Footer />
             </div>
         </div>
     );

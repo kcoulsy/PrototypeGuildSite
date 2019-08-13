@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Recruitment from '../components/Recruitment';
 import RaidProgress from '../components/RaidProgress';
 import AboutUs from '../components/AboutUs';
@@ -45,6 +46,7 @@ export default class Index extends Component {
                     <Recruitment recruitment={recruitment} />
                     <RaidProgress progress={progress} />
                     <AboutUs />
+                    <Footer />
                 </div>
             </div>
         );

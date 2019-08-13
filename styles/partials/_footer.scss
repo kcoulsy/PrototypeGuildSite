@@ -1,0 +1,33 @@
+@import '../constants';
+
+.proto-footer {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: $proto-transparent-dark-blue;
+    .container {
+        max-width: $container-width;
+        margin: 0 auto;
+        color: $proto-off-white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+        ul {
+            list-style: none;
+            li {
+                margin: 0;
+                padding: 3px;
+                text-align: right;
+                display: inline-block;
+                a {
+                    text-decoration: none;
+                    color: $proto-off-white !important;
+
+                    &:hover {
+                        color: $proto-light-grey !important;
+                    }
+                }
+            }
+        }
+    }
+}

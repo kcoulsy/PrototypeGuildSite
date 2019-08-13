@@ -5,6 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Panel from '../components/Panel';
+import Footer from '../components/Footer';
 
 const RECAPTCHA_KEY = '6LcOKaoUAAAAAPjSxKF5ZKj1q0QFmk7dqEVvJffw';
 
@@ -275,6 +276,7 @@ export default class Apply extends Component {
                         </form>
                         {error}
                     </Panel>
+                    <Footer />
                 </div>
             </div>
         );
