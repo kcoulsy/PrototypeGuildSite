@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import Head from '../components/head';
 import Navbar from '../components/Navbar';
 import Panel from '../components/Panel';
+
+const RECAPTCHA_KEY = '6LcOKaoUAAAAAPjSxKF5ZKj1q0QFmk7dqEVvJffw';
 
 export default class Apply extends Component {
     static getInitialProps = ({ req }) => {
@@ -51,21 +54,18 @@ export default class Apply extends Component {
 
         ev.preventDefault();
 
-        // if (this.validate()) {
-            if (true) {
-                debugger;
-                axios({
-                    method: 'post',
-                    url: `apply/submit`,
-                    data
-                })
-            //     auth.api('post', '/users', {
-            //         data
-            //     }).then(() => {
-            //         Router.push(SITE_URL);
-            //     });
-            console.log(data);
-            this.setState({ hasSubmitted: true });
+        if (true) {
+            axios({
+                method: 'post',
+                url: `apply/submit`,
+                data,
+            })
+            .then(() => {
+                Router.push(SITE_URL);
+                this.setState({ hasSubmitted: true });
+            }).catch(e => {
+                this.setError('Unable to send application, please check everything again.')
+            });
         }
     };
 
@@ -77,6 +77,7 @@ export default class Apply extends Component {
             discordTag,
             professionOne,
             professionTwo,
+            recaptcha,
         } = this.state;
 
         if (!discordTag) {
@@ -101,6 +102,11 @@ export default class Apply extends Component {
 
         if (!professionOne.length || !professionTwo.length) {
             this.setError('You must pick both professions!');
+            return false;
+        }
+
+        if (!recaptcha.length) {
+            this.setError("You must prove you're not a robot!");
             return false;
         }
 
@@ -251,6 +257,13 @@ export default class Apply extends Component {
                                 rows="5"
                                 onChange={this.handleChange}
                                 placeholder="Anything else you would like to add?"
+                            />
+                            <ReCAPTCHA
+                                sitekey={RECAPTCHA_KEY}
+                                theme="dark"
+                                onChange={val =>
+                                    this.setState({ recaptcha: val })
+                                }
                             />
                             <button
                                 className="proto-btn"
