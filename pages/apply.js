@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Router from 'next/router';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -63,7 +62,6 @@ export default class Apply extends Component {
                 data,
             })
             .then(() => {
-                Router.push('/');
                 this.setState({ hasSubmitted: true });
             }).catch(e => {
                 this.setError('Unable to send application, please check everything again.')
