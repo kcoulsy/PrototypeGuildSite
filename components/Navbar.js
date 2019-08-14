@@ -7,16 +7,16 @@ export default () => {
             <div className="nav-container">
                 <div className="nav-left">
                     <Link href="/">
-                        <div className="nav-item">Home</div>
+                        <a className="nav-item">Home</a>
                     </Link>
                     <Link href="/about">
-                        <div className="nav-item">About</div>
+                        <a className="nav-item">About</a>
                     </Link>
                 </div>
                 <div className="nav-right">
                     <a href="https://discord.gg/5YCTZ7K" className="nav-item right">Discord</a>
                     <Link href="/apply">
-                        <div className="nav-item right">Apply</div>
+                        <a className="nav-item right">Apply</a>
                     </Link>
                 </div>
             </div>

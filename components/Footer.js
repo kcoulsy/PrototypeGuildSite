@@ -8,16 +8,16 @@ export default () => {
                 <span>Copyright &copy; 2019 - Prototype Guild</span>
                 <ul>
                     <li>
-                        <Link href="/">Home</Link>
+                        <Link href="/"><a>Home</a></Link>
                     </li>
                     <li>
-                        <Link href="/about">About</Link>
+                        <Link href="/about"><a>About</a></Link>
                     </li>
                     <li>
                         <a href="https://discord.gg/5YCTZ7K">Discord</a>
                     </li>
                     <li>
-                        <Link href="/apply">Apply</Link>
+                        <Link href="/apply"><a>Apply</a></Link>
                     </li>
                 </ul>
             </div>

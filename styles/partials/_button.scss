@@ -7,6 +7,7 @@
     margin: 5px 0;
     padding: 5px;
     font-size: 18px;
+    text-decoration: none;
     cursor: pointer;
     &:hover {
         background: lighten($proto-dark-blue, 5%);

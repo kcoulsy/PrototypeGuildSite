@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Router from 'next/router';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -62,7 +63,7 @@ export default class Apply extends Component {
                 data,
             })
             .then(() => {
-                Router.push(SITE_URL);
+                Router.push('/');
                 this.setState({ hasSubmitted: true });
             }).catch(e => {
                 this.setError('Unable to send application, please check everything again.')
@@ -143,6 +144,7 @@ export default class Apply extends Component {
         }
         return (
             <div>
+                <Head />
                 <Navbar />
                 <div className="content">
                     <Panel title="Apply to the guild" styleName="panel-md">

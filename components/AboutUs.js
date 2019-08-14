@@ -28,7 +28,7 @@ export default () => {
                 </p>
 
                 <Link href="/apply">
-                    <button className="proto-btn">Click here to apply!</button>
+                    <a className="proto-btn">Click here to apply!</a>
                 </Link>
             </Panel>
         </section>
