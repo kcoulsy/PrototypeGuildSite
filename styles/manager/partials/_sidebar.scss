@@ -17,6 +17,21 @@
             color: #ebebeb;
         }
     }
+    .hidden {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+
+        svg {
+            opacity: 0;
+            transition: opacity 1s;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
 }
 @media (max-width: $breakpoint) {
     .sidebar {
@@ -26,6 +41,22 @@
         svg {
             margin-top: 0;
             margin-left: 15px;
+        }
+        .hidden {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-bottom: 0;
+            padding-right: 10px;
+
+            svg {
+                opacity: 0;
+                transition: opacity 1s;
+                &:hover{
+                    opacity: 1;
+                }
+            }
         }
     }
 }

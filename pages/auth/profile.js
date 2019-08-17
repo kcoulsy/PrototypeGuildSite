@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import { redirectIfNotAuthenticated, getJwt } from '../../lib/auth';
+import redirect from '../../lib/redirect';
 
 export default class Profile extends Component {
     static getInitialProps(ctx) {
         if (redirectIfNotAuthenticated(ctx)) {
             return {};
         }
-        const jwt = getJwt(ctx);
-        return {
-            authenticated: jwt,
-        };
+        redirect('/manager/users', ctx);
+        return {};
     }
     render() {
-        return (
-            <div>
-                profile {this.props.authenticated}
-            </div>
-        );
+        return null;
     }
 }
