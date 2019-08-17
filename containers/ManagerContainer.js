@@ -3,10 +3,10 @@ import React from 'react';
 import Sidebar from '../components/Manager/Sidebar';
 import '../styles/manager/index.scss';
 
-export default ({ children }) => {
+export default ({ isAuthenticated, children }) => {
     return (
         <div className="container-manager">
-            <Sidebar />
+            <Sidebar isAuthenticated={isAuthenticated} />
             <div className="content">{children}</div>
         </div>
     );

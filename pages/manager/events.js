@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { redirectIfNotAuthenticated, isAuthenticated } from '../../lib/auth';
+import { isAuthenticated } from '../../lib/auth';
 
 import ManagerContainer from '../../containers/ManagerContainer';
 
 export default class Import extends Component {
     static getInitialProps(ctx) {
-        redirectIfNotAuthenticated(ctx);
         return {
             isAuthenticated: isAuthenticated(ctx),
         };
@@ -13,7 +12,7 @@ export default class Import extends Component {
     render() {
         return (
             <ManagerContainer {...this.props}>
-                <h2>Importer</h2>
+                <h2>Events</h2>
             </ManagerContainer>
         );
     }
