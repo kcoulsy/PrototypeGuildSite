@@ -141,7 +141,7 @@ export default class Apply extends Component {
             );
         }
         return (
-            <div>
+            <div className="container-main">
                 <Head />
                 <Navbar />
                 <div className="content">

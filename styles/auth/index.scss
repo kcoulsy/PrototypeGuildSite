@@ -3,17 +3,17 @@ $breakpoint: 576px;
 $sidebar-size: 70px;
 
 body {
-    background: #f0f0f0;
-    background: #252326;
-    font-family: Helvetica, Ariel, sans;
-    color: #383838;
-    margin: 0;
-    color: white;
 }
 
 .container-auth {
+    font-family: Helvetica, Ariel, sans;
+    background: #252326;
+    margin: 0;
+    color: white;
+    // color: #383838;
     .content {
-        margin: 50px auto;
+        margin: auto;
+        padding-top: 50px;
         width: 50%;
         form {
             display: flex;

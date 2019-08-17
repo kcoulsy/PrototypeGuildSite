@@ -7,7 +7,7 @@ import Panel from '../components/Panel';
 
 export default () => {
     return (
-        <div className="page-about">
+        <div className="container-main page-about">
             <Head />
             <Navbar />
             <div className="content">

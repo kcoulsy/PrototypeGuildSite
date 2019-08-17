@@ -31,7 +31,7 @@ export default class Index extends Component {
         const { recruitment, progress } = this.state;
 
         return (
-            <div className="page-index">
+            <div className="container-main page-index">
                 <Head />
                 <Navbar />
                 <div className="content">
