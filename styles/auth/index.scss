@@ -1,0 +1,41 @@
+$grey: #bfbfbf;
+$breakpoint: 576px;
+$sidebar-size: 70px;
+
+body {
+    background: #f0f0f0;
+    background: #252326;
+    font-family: Helvetica, Ariel, sans;
+    color: #383838;
+    margin: 0;
+    color: white;
+}
+
+.container-auth {
+    .content {
+        margin: 50px auto;
+        width: 50%;
+        form {
+            display: flex;
+            flex-direction: column;
+            input {
+                padding: 5px;
+                margin: 5px;
+                font-size: 16px;
+                &.btn {
+                    $blue: #30bbe3;
+                    background: $blue;
+                    color: white;
+                    border: 0;
+                    &:hover {
+                        background: darken($blue, 5%);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .page-title {
+            margin: 0;
+        }
+    }
+}
