@@ -1,0 +1,31 @@
+.sidebar {
+    position: absolute;
+    left: 0;
+    width: $sidebar-size;
+    height: 100vh;
+    background: #30bbe3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+        font-size: 30px;
+        color: white;
+        margin-top: 15px;
+        cursor: pointer;
+        &:hover {
+            color: #ebebeb;
+        }
+    }
+}
+@media (max-width: $breakpoint) {
+    .sidebar {
+        width: 100%;
+        height: $sidebar-size;
+        flex-direction: row;
+        svg {
+            margin-top: 0;
+            margin-left: 15px;
+        }
+    }
+}

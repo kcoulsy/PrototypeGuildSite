@@ -1,0 +1,17 @@
+$grey: #bfbfbf;
+$breakpoint: 576px;
+$sidebar-size: 70px;
+
+body {
+    background: #f0f0f0;
+    background: #252326;
+    font-family: Helvetica, Ariel, sans;
+    color: #383838;
+    margin: 0;
+    color: white;
+}
+
+.container-manager {
+    @import './partials/sidebar';
+    @import './partials/content';
+}
