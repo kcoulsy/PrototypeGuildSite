@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
@@ -10,6 +11,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const { sequelize } = require('./models');
+const AuthMiddleware = require('./middleware/auth');
 // Test DB
 sequelize
     .authenticate()
@@ -21,6 +23,8 @@ app.prepare().then(() => {
 
     server.use(bodyParser.json({ limit: '50mb' }));
     server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+    server.use(cookieParser());
+    server.use(AuthMiddleware);
     server.use(require('./routes/routes'));
 
     server.get('*', (req, res) => {
