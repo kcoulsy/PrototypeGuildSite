@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.authenticate = async function(username, password) {
         const user = await User.findOne({ where: { username } });
-        console.log(user);
+
         if (bcrypt.compareSync(password, user.password)) {
             return user.authorize();
         }

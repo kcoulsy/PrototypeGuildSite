@@ -29,7 +29,7 @@ export default class Index extends Component {
 
     render() {
         const { recruitment, progress } = this.state;
-        // console.log(recruitment);
+
         return (
             <div className="page-index">
                 <Head />
