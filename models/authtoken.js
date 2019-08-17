@@ -6,8 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     const AuthToken = sequelize.define(
         'AuthToken',
         {
-            token: DataTypes.STRING,
-            allowNull: false,
+            token: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
         },
         {}
     );
