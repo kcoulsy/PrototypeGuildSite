@@ -6,6 +6,7 @@ import { redirectIfNotAuthenticated, isAuthenticated } from '../../../lib/auth';
 
 import validateSchema from '../../../lib/validateSchema';
 import ManagerContainer from '../../../containers/ManagerContainer';
+import exampleSchema from '../../../constants/exampleSchema';
 
 export default class Create extends Component {
     static getInitialProps(ctx) {
@@ -39,6 +40,7 @@ export default class Create extends Component {
                 <h2>Create Schema</h2>
                 <JSONInput
                     id="schema_inputter"
+                    placeholder={exampleSchema}
                     onChange={({ json }) =>
                         this.setState({ schema: json, isValid: false })
                     }

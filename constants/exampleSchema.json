@@ -1,0 +1,24 @@
+{
+    "raid": "MC",
+    "sections": [
+      {
+        "name": "Lucifron",
+        "types": [
+          {
+            "name": "Tank Assignments",
+            "valid": [
+              "warrior",
+              "druid"
+            ],
+            "assignments": [
+              "Main Tank",
+              "Off Tank"
+            ]
+          }
+        ],
+        "notes": [
+          "healers raid heal when their tanks target is dead"
+        ]
+      }
+    ]
+  }
