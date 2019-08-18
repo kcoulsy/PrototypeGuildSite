@@ -5,6 +5,7 @@ exports.create = (req, res) => {
     Schema.create({ schema, enabled: true }).then(data => {
         res.send(data);
     });
+    //TODO error handling
 };
 
 exports.get = (req, res) => {
@@ -18,6 +19,7 @@ exports.get = (req, res) => {
     Schema.findAll().then(response => {
         res.send(response);
     });
+    //TODO error handling
 };
 
 exports.update = (req, res) => {
@@ -25,4 +27,5 @@ exports.update = (req, res) => {
     Schema.update({ enabled }, { where: { id } }).then(data => {
         res.send({ enabled });
     });
+    //TODO error handling
 };

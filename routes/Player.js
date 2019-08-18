@@ -15,10 +15,10 @@ exports.import = (req, res) => {
             model.update(player).then(res => {
                 
             }).catch(e => {
-
+                //TODO error handling
             })
         }).catch(e => {
-            
+            //TODO error handling
         })
     })
     res.send({updating: true})
@@ -28,4 +28,5 @@ exports.get = (req, res) => {
     Player.findAll().then(players => {
         res.send(players);
     })
+    //TODO error handling
 }
