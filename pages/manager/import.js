@@ -29,7 +29,8 @@ export default class Import extends Component {
             }
         }).then(() => {
             redirect('/manager/users');
-        })
+        });
+        //TODO handle fail - basic validation (is this an array?)
     }
     render() {
         return (

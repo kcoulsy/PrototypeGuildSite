@@ -34,6 +34,7 @@ export default class Create extends Component {
         }
         this.setState({ errors, isValid });
     };
+    // TODO - save schema
     render() {
         return (
             <ManagerContainer {...this.props}>

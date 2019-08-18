@@ -22,11 +22,11 @@ export default class Import extends Component {
         }).then(({ data }) => {
             this.setState({ players: data });
         });
+        // TODO - handle fail
     }
     render() {
         const { players } = this.state;
-        console.log(players);
-        // return null;
+
         return (
             <ManagerContainer {...this.props}>
                 <h2>Players</h2>
