@@ -3,15 +3,17 @@ $breakpoint: 576px;
 $sidebar-size: 70px;
 
 body {
-    background: #f0f0f0;
-    font-family: Helvetica, Ariel, sans;
-    color: #383838;
+    // // background: #f0f0f0;
+    // color: #383838;
     // margin: 0;
-    color: white;
+    // color: white;
 }
 
 .container-manager {
+    font-family: Helvetica, Ariel, sans;
     background: #252326;
+    color: white;
     @import './partials/sidebar';
     @import './partials/content';
+    @import './partials/react-table';
 }

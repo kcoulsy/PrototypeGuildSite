@@ -25,5 +25,7 @@ exports.import = (req, res) => {
 }
 
 exports.get = (req, res) => {
-
+    Player.findAll().then(players => {
+        res.send(players);
+    })
 }

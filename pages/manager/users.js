@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { isAuthenticated } from '../../lib/auth';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import axios from 'axios';
 
+import { isAuthenticated } from '../../lib/auth';
 import ManagerContainer from '../../containers/ManagerContainer';
 
 export default class Import extends Component {
@@ -9,10 +12,91 @@ export default class Import extends Component {
             isAuthenticated: isAuthenticated(ctx),
         };
     }
+    state = {
+        players: [],
+    };
+    componentDidMount() {
+        axios({
+            method: 'get',
+            url: '/players/get',
+        }).then(({ data }) => {
+            this.setState({ players: data });
+        });
+    }
     render() {
+        const { players } = this.state;
+        console.log(players);
+        // return null;
         return (
             <ManagerContainer {...this.props}>
-                <h2>Users</h2>
+                <h2>Players</h2>
+                <ReactTable
+                    data={players}
+                    resolveData={data => data.map(row => row)}
+                    columns={[
+                        {
+                            Header: 'Player',
+                            columns: [
+                                {
+                                    Header: 'Name',
+                                    accessor: 'name',
+                                },
+                                {
+                                    Header: 'Class',
+                                    accessor: 'class',
+                                },
+                                {
+                                    Header: 'Level',
+                                    accessor: 'level',
+                                },
+                            ],
+                        },
+                        {
+                            Header: 'Rank',
+                            columns: [
+                                {
+                                    Header: 'Rank',
+                                    accessor: 'rank',
+                                },
+                                {
+                                    Header: 'Index',
+                                    accessor: 'rankIndex',
+                                },
+                            ],
+                        },
+                        {
+                            Header: 'Notes',
+                            columns: [
+                                {
+                                    Header: 'EPGP',
+                                    accessor: 'officerNote',
+                                },
+                                {
+                                    Header: 'Note',
+                                    accessor: 'note',
+                                },
+                            ],
+                        },
+                    ]}
+                    defaultSorted={[
+                        {
+                            id: 'rankIndex',
+                            desc: false,
+                        },
+                    ]}
+                    defaultPageSize={10}
+                    className="-striped -highlight"
+                    getTdProps={(state, rowInfo, column, instance) => {
+                        return {
+                            onClick: (e, handleOriginal) => {
+                                console.log(rowInfo);
+                                if (handleOriginal) {
+                                    handleOriginal();
+                                }
+                            },
+                        };
+                    }}
+                />
             </ManagerContainer>
         );
     }

@@ -14,6 +14,7 @@ router.get('/user/me', User.me);
 
 // TODO add authorization
 router.post('/players/import', Player.import);
+router.get('/players/get', Player.get);
 
 
 router.post('/apply/submit', Apply.submit);

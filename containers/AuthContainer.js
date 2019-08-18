@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/auth/index.scss';
+import '../styles/index.scss';
 
 export default ({ children }) => {
     return (

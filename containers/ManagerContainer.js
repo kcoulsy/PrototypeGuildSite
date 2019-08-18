@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Sidebar from '../components/Manager/Sidebar';
-import '../styles/manager/index.scss';
+import '../styles/index.scss';
 
 export default ({ isAuthenticated, children }) => {
     return (
