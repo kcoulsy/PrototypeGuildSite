@@ -35,7 +35,7 @@ export default class Import extends Component {
     render() {
         return (
             <ManagerContainer {...this.props}>
-                <h2>Importer</h2>
+                <h2>Player Importer</h2>
                 <JSONInput
                     id="player_importer"
                     onChange={({jsObject}) =>

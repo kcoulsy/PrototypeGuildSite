@@ -4,6 +4,7 @@ const { Progress, Recruitment } = require('../models');
 const Apply = require('./Apply');
 const User = require('./User');
 const Player = require('./Player');
+const Schema = require('./Schema');
 
 const router = express.Router();
 
@@ -16,6 +17,10 @@ router.get('/user/me', User.me);
 router.post('/players/import', Player.import);
 router.get('/players/get', Player.get);
 
+router.get('/schema/get', Schema.get);
+router.get('/schema/:id', Schema.get);
+router.post('/schema/create', Schema.create);
+router.patch('/schema/update', Schema.update);
 
 router.post('/apply/submit', Apply.submit);
 

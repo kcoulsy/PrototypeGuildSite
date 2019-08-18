@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,6 +7,7 @@ import {
     faUpload,
     faSignInAlt,
     faSignOutAlt,
+    faCode,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default ({ isAuthenticated }) => {
@@ -23,11 +24,18 @@ export default ({ isAuthenticated }) => {
                 </a>
             </Link>
             {isAuthenticated ? (
-                <Link href="/manager/import">
-                    <a>
-                        <FontAwesomeIcon icon={faUpload} />
-                    </a>
-                </Link>
+                <Fragment>
+                    <Link href="/manager/import">
+                        <a>
+                            <FontAwesomeIcon icon={faUpload} />
+                        </a>
+                    </Link>
+                    <Link href="/manager/schemas">
+                        <a>
+                            <FontAwesomeIcon icon={faCode} />
+                        </a>
+                    </Link>
+                </Fragment>
             ) : null}
             <div className="hidden">
                 {isAuthenticated ? (

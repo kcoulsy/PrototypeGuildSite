@@ -27,6 +27,9 @@ app.prepare().then(() => {
     server.use(AuthMiddleware);
     server.use(require('./routes/routes'));
 
+    server.get("/manager/schemas/:id", (req, res) => {
+        return app.render(req, res, "/manager/schemas/show", { id: req.params.id })
+    })
     server.get('*', (req, res) => {
         return handle(req, res);
     });
