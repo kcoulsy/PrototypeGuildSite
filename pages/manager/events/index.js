@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { isAuthenticated } from '../../lib/auth';
+import Link from 'next/link';
+import { isAuthenticated } from '../../../lib/auth';
 
-import ManagerContainer from '../../containers/ManagerContainer';
+import ManagerContainer from '../../../containers/ManagerContainer';
 
 export default class Import extends Component {
     static getInitialProps(ctx) {
@@ -13,6 +14,11 @@ export default class Import extends Component {
         return (
             <ManagerContainer {...this.props}>
                 <h2>Events</h2>
+                <Link href="/manager/events/create">
+                <a>
+                    <button>Create New</button>
+                </a>
+            </Link>
             </ManagerContainer>
         );
     }

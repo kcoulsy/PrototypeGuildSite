@@ -2,6 +2,7 @@ import React from 'react';
 
 import Sidebar from '../components/Manager/Sidebar';
 import '../styles/index.scss';
+import 'react-table/react-table.css';
 
 export default ({ isAuthenticated, children }) => {
     return (

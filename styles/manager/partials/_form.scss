@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: column;
+    input, select {
+        font-family: Helvetica, Ariel, sans;
+        padding: 5px;
+        margin: 5px;
+        font-size: 16px;
+        &.btn {
+            $blue: #30bbe3;
+            background: $blue;
+            color: white;
+            border: 0;
+            &:hover {
+                background: darken($blue, 5%);
+                cursor: pointer;
+            }
+        }
+    }
+}

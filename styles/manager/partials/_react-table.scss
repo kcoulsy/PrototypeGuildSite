@@ -1,4 +1,7 @@
 .ReactTable {
     color: black;
     background: white;
+    &.-highlight .rt-tbody .rt-tr:not(.-padRow) {
+        cursor: pointer;
+    }
 }
