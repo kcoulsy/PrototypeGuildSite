@@ -2,16 +2,10 @@ const express = require('express');
 
 const { Progress, Recruitment } = require('../models');
 const Apply = require('./Apply');
-const User = require('./User');
 const Player = require('./Player');
 const Schema = require('./Schema');
 
 const router = express.Router();
-
-router.post('/user/register', User.register);
-router.post('/user/login', User.login);
-router.delete('/user/logout', User.logout);
-router.get('/user/me', User.me);
 
 // TODO add authorization
 router.post('/players/import', Player.import);

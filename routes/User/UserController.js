@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { User } = require('../models');
+const { User } = require('../../models');
 
 exports.register = async (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, 10);
