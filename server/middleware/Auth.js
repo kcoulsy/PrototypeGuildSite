@@ -1,6 +1,6 @@
 const { User, AuthToken } = require('../models');
 
-module.exports = async function(req, res, next) {
+const authMiddlware = async function(req, res, next) {
     const token = req.cookies.auth_token || req.headers.authorization;
 
     if (token) {
@@ -8,10 +8,13 @@ module.exports = async function(req, res, next) {
             where: { token },
             include: User,
         });
-
         if (authToken) {
             req.user = authToken.User;
         }
     }
     next();
+};
+
+exports.handleAuth = server => {
+    server.use(authMiddlware);
 };

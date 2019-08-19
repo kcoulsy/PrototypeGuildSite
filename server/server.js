@@ -1,7 +1,5 @@
 const express = require('express');
 const next = require('next');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
@@ -11,9 +9,6 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const { sequelize } = require('./models');
-const AuthMiddleware = require('./middleware/auth');
-const applyRoutes = require('./utils/applyRoutes');
-const routes = require('./routes');
 
 // Test DB
 sequelize
@@ -22,12 +17,14 @@ sequelize
     .catch(e => console.log(e));
 
 app.prepare().then(() => {
+    const applyRoutes = require('./utils/applyRoutes');
+    const applyMiddleware = require('./utils/applyMiddleware');
+    const routes = require('./routes');
+    const middleware = require('./middleware');
+
     const server = express();
 
-    server.use(bodyParser.json({ limit: '50mb' }));
-    server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-    server.use(cookieParser());
-    server.use(AuthMiddleware);
+    applyMiddleware(middleware, server);
     applyRoutes(routes, server);
 
     server.get('/manager/schemas/:id', (req, res) => {
