@@ -28,7 +28,6 @@ app.prepare().then(() => {
     server.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
     server.use(cookieParser());
     server.use(AuthMiddleware);
-    server.use(require('./routes/routes'));
     applyRoutes(routes, server);
 
     server.get('/manager/schemas/:id', (req, res) => {
