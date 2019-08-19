@@ -2,7 +2,9 @@ const { Event, Schema } = require('../../models');
 
 exports.find = async (req, res) => {
     try {
-        const events = await Event.findAll();
+        const events = await Event.findAll({
+            include: [{ model: Schema, attributes: ['name'] }],
+        });
 
         res.send({ events });
     } catch (e) {

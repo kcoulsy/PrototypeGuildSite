@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {}
     );
-    Event.associate = function(models) {};
+    Event.associate = function(models) {
+        Event.belongsTo(models.Schema);
+    };
     return Event;
 };
