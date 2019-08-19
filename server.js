@@ -12,6 +12,9 @@ const handle = app.getRequestHandler();
 
 const { sequelize } = require('./models');
 const AuthMiddleware = require('./middleware/auth');
+const applyRoutes = require('./utils/applyRoutes');
+const routes = require('./routes');
+
 // Test DB
 sequelize
     .authenticate()
@@ -26,10 +29,14 @@ app.prepare().then(() => {
     server.use(cookieParser());
     server.use(AuthMiddleware);
     server.use(require('./routes/routes'));
+    applyRoutes(routes, server);
 
-    server.get("/manager/schemas/:id", (req, res) => {
-        return app.render(req, res, "/manager/schemas/show", { id: req.params.id })
-    })
+    server.get('/manager/schemas/:id', (req, res) => {
+        return app.render(req, res, '/manager/schemas/show', {
+            id: req.params.id,
+        });
+    });
+
     server.get('*', (req, res) => {
         return handle(req, res);
     });
