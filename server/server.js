@@ -10,10 +10,10 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const { sequelize } = require('./models');
-const AuthMiddleware = require('./middleware/auth');
-const applyRoutes = require('./utils/applyRoutes');
-const routes = require('./routes');
+const { sequelize } = require('../models');
+const AuthMiddleware = require('../middleware/auth');
+const applyRoutes = require('../utils/applyRoutes');
+const routes = require('../routes');
 
 // Test DB
 sequelize
