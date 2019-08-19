@@ -13,7 +13,7 @@ module.exports = [
     },
     {
         path: '/user/logout',
-        method: 'get',
+        method: 'delete',
         handler: UserController.logout,
     },
     {

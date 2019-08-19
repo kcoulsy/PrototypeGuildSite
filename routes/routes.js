@@ -2,14 +2,9 @@ const express = require('express');
 
 const { Progress, Recruitment } = require('../models');
 const Apply = require('./Apply');
-const Player = require('./Player');
 const Schema = require('./Schema');
 
 const router = express.Router();
-
-// TODO add authorization
-router.post('/players/import', Player.import);
-router.get('/players/get', Player.get);
 
 router.get('/schema/get', Schema.get);
 router.get('/schema/:id', Schema.get);
