@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { redirectIfNotAuthenticated, getJwt } from '../../lib/auth';
-import redirect from '../../lib/redirect';
+
+import { redirectIfNotAuthenticated, getJwt } from '../../src/lib/auth';
+import redirect from '../../src/lib/redirect';
 
 export default class Profile extends Component {
     static getInitialProps(ctx) {

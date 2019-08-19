@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { login, redirectIfAuthenticated } from '../../lib/auth';
 
-import AuthContainer from '../../containers/AuthContainer';
+import { login, redirectIfAuthenticated } from '../../src/lib/auth';
+import AuthContainer from '../../src/containers/AuthContainer';
 
 export default class Login extends Component {
     static getInitialProps(ctx) {

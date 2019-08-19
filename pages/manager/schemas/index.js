@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import ReactTable from 'react-table';
-import 'react-table/react-table.css';
+import '../../../node_modules/react-table/react-table.css';
 
-import { redirectIfNotAuthenticated, isAuthenticated, redirectIfAuthenticated } from '../../../lib/auth';
-
-import ManagerContainer from '../../../containers/ManagerContainer';
-import redirect from '../../../lib/redirect';
+import { redirectIfNotAuthenticated, isAuthenticated, redirectIfAuthenticated } from '../../../src/lib/auth';
+import ManagerContainer from '../../../src/containers/ManagerContainer';
+import redirect from '../../../src/lib/redirect';
 
 export default class Index extends Component {
     static getInitialProps(ctx) {

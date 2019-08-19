@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Head from '../components/head';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Panel from '../components/Panel';
+import Head from '../src/components/head';
+import Footer from '../src/components/Footer';
+import Navbar from '../src/components/Navbar';
+import Panel from '../src/components/Panel';
 
 export default () => {
     return (

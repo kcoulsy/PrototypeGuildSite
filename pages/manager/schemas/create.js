@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import JSONInput from 'react-json-editor-ajrm';
 import locale from 'react-json-editor-ajrm/locale/en';
 
-import { redirectIfNotAuthenticated, isAuthenticated } from '../../../lib/auth';
+import { redirectIfNotAuthenticated, isAuthenticated } from '../../../src/lib/auth';
 
-import validateSchema from '../../../lib/validateSchema';
-import ManagerContainer from '../../../containers/ManagerContainer';
-import exampleSchema from '../../../constants/exampleSchema';
+import validateSchema from '../../../src/lib/validateSchema';
+import ManagerContainer from '../../../src/containers/ManagerContainer';
+import exampleSchema from '../../../src/constants/exampleSchema';
 
 export default class Create extends Component {
     static getInitialProps(ctx) {

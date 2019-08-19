@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import Head from '../components/head';
-import Navbar from '../components/Navbar';
-import Panel from '../components/Panel';
-import Footer from '../components/Footer';
+import Head from '../src/components/head';
+import Navbar from '../src/components/Navbar';
+import Panel from '../src/components/Panel';
+import Footer from '../src/components/Footer';
 
 const RECAPTCHA_KEY = '6LcOKaoUAAAAAPjSxKF5ZKj1q0QFmk7dqEVvJffw';
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Head from '../components/head';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Recruitment from '../components/Recruitment';
-import RaidProgress from '../components/RaidProgress';
-import AboutUs from '../components/AboutUs';
+import Head from '../src/components/head';
+import Navbar from '../src/components/Navbar';
+import Footer from '../src/components/Footer';
+import Recruitment from '../src/components/Recruitment';
+import RaidProgress from '../src/components/RaidProgress';
+import AboutUs from '../src/components/AboutUs';
 
 export default class Index extends Component {
     static getInitialProps({ query }) {

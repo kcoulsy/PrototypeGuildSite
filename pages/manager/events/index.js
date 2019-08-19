@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { isAuthenticated } from '../../../lib/auth';
 
-import ManagerContainer from '../../../containers/ManagerContainer';
+import { isAuthenticated } from '../../../src/lib/auth';
+import ManagerContainer from '../../../src/containers/ManagerContainer';
 
 export default class Import extends Component {
     static getInitialProps(ctx) {

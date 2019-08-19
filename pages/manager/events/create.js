@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { isAuthenticated } from '../../../lib/auth';
 
-import ManagerContainer from '../../../containers/ManagerContainer';
+import { isAuthenticated } from '../../../src/lib/auth';
+import ManagerContainer from '../../../src/containers/ManagerContainer';
 
 export default class Create extends Component {
     static getInitialProps(ctx) {

@@ -3,9 +3,8 @@ import JSONInput from 'react-json-editor-ajrm';
 import locale from 'react-json-editor-ajrm/locale/en';
 import axios from 'axios';
 
-import { redirectIfNotAuthenticated, isAuthenticated } from '../../../lib/auth';
-
-import ManagerContainer from '../../../containers/ManagerContainer';
+import { redirectIfNotAuthenticated, isAuthenticated } from '../../../src/lib/auth';
+import ManagerContainer from '../../../src/containers/ManagerContainer';
 
 export default class Show extends Component {
     static getInitialProps(ctx) {

@@ -3,8 +3,8 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import axios from 'axios';
 
-import { isAuthenticated } from '../../lib/auth';
-import ManagerContainer from '../../containers/ManagerContainer';
+import { isAuthenticated } from '../../src/lib/auth';
+import ManagerContainer from '../../src/containers/ManagerContainer';
 
 export default class Import extends Component {
     static getInitialProps(ctx) {
