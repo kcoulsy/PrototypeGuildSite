@@ -1,4 +1,4 @@
 /node_modules
 /.next
 .env
-/config/config.json
+/server/config/config.json
