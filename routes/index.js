@@ -1,17 +1,14 @@
-const events = require('./Events');
-const user = require('./User');
-const players = require('./Players');
-const schema = require('./Schema');
-const apply = require('./Apply');
-const recruitment = require('./Recruitment');
-const progress = require('./Progress');
+const fs = require('fs');
+const path = require('path');
 
-module.exports = [
-    ...events,
-    ...user,
-    ...players,
-    ...schema,
-    ...apply,
-    ...recruitment,
-    ...progress
-];
+const routes = fs
+    .readdirSync(__dirname, { withFileTypes: true })
+    .reduce((acc, dir) => {
+        if (!dir.isDirectory()) return acc;
+
+        const routes = require(path.join(__dirname, dir.name));
+
+        return acc.concat(routes);
+    }, []);
+
+module.exports = routes;
