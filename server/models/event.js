@@ -9,8 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         {}
     );
-    Event.associate = function(models) {
-        Event.hasOne(models.schema);
-    };
+    Event.associate = function(models) {};
     return Event;
 };

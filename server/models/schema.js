@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         {}
     );
     Schema.associate = function(models) {
-        Schema.hasMany(models.event);
+        Schema.hasMany(models.Event);
     };
     return Schema;
 };
