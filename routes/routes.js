@@ -2,14 +2,9 @@ const express = require('express');
 
 const { Progress, Recruitment } = require('../models');
 const Apply = require('./Apply');
-const Schema = require('./Schema');
 
 const router = express.Router();
 
-router.get('/schema/get', Schema.get);
-router.get('/schema/:id', Schema.get);
-router.post('/schema/create', Schema.create);
-router.patch('/schema/update', Schema.update);
 
 router.post('/apply/submit', Apply.submit);
 

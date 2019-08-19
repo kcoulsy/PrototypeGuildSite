@@ -1,4 +1,4 @@
-const { Schema } = require('../models');
+const { Schema } = require('../../models');
 
 exports.create = (req, res) => {
     const schema = JSON.stringify(req.body.schema);
