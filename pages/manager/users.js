@@ -20,7 +20,7 @@ export default class Import extends Component {
             method: 'get',
             url: '/players/get',
         }).then(({ data }) => {
-            this.setState({ players: data });
+            this.setState({ players: data.players });
         });
         // TODO - handle fail
     }
