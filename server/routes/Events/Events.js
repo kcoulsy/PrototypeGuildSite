@@ -1,4 +1,4 @@
-const { Event, Schema } = require('../../models');
+const { Event, Schema, Attendance } = require('../../models');
 
 exports.find = async (req, res) => {
     try {
@@ -7,6 +7,31 @@ exports.find = async (req, res) => {
         });
 
         res.send({ events });
+    } catch (e) {
+        res.status(400).send();
+    }
+};
+
+exports.findOne = async (req, res) => {
+    const {id} = req.params;
+    const { attendance, assignments, schema } = req.query;
+
+    try {
+        const include = [];
+
+        if (schema) {
+            include.push({ model: Schema });
+        }
+
+        if (attendance) {
+            include.push({ model: Attendance });
+        }
+
+        const event = await Event.findByPk(id, {
+            include,
+        });
+
+        res.send({ event });
     } catch (e) {
         res.status(400).send();
     }

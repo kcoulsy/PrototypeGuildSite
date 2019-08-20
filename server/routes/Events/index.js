@@ -8,6 +8,11 @@ module.exports = [
         handler: Events.find,
     },
     {
+        method: 'get',
+        path: '/events/:id',
+        handler: Events.findOne
+    },
+    {
         path: '/events/create',
         method: 'post',
         handler: Events.create,
