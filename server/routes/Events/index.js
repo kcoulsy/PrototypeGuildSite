@@ -1,4 +1,5 @@
 const Events = require('./Events');
+const Attendance = require('./Attendance');
 
 module.exports = [
     {
@@ -11,4 +12,9 @@ module.exports = [
         method: 'post',
         handler: Events.create,
     },
+    {
+        method: 'get',
+        path: '/events/:id/attendance',
+        handler: Attendance.get
+    }
 ];
