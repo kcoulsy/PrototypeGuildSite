@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 
-//   {
-//       name: 'Tank Assignments',
-//       valid_classes: ['warrior', 'druid'],
-//       assignments: ['Main Tank', 'Off Tank']
-//   }
-
 export default class AssignmentType extends Component {
     getAvailablePlayers = () => {
         const { attendance, valid } = this.props;
         return Object.values(attendance).filter(player => {
-          if (player.role === 'none') return false;
+            if (player.role === 'none') return false;
             return (
                 valid.includes(player.role) ||
-                valid.includes(player.Player && player.Player.class.toLowerCase())
+                valid.includes(
+                    player.Player && player.Player.class.toLowerCase()
+                )
             );
         });
     };
@@ -33,46 +29,16 @@ export default class AssignmentType extends Component {
                 <strong>{name}</strong>
                 <ul>
                     {assignments.map((assignment, index) => {
-                        const selected = values[index];
                         return (
-                            <li>
-                                {assignment}
-                                {editMode ? (
-                                    <div>
-                                        <select
-                                            value={selected}
-                                            onChange={ev => {
-                                                updateAssignment({
-                                                    assignmentIndex: index,
-                                                    value:
-                                                        ev.currentTarget.value,
-                                                    typeIndex,
-                                                });
-                                            }}
-                                        >
-                                            <option>None</option>
-                                            {availablePlayers.map(
-                                                ({ Player }) => {
-                                                    return (
-                                                        <option
-                                                            value={Player.name}
-                                                        >
-                                                            {Player.name} (
-                                                            {Player.class.slice(
-                                                                0,
-                                                                4
-                                                            )}
-                                                            )
-                                                        </option>
-                                                    );
-                                                }
-                                            )}
-                                        </select>
-                                    </div>
-                                ) : (
-                                    <span>{selected}</span>
-                                )}
-                            </li>
+                            <PlayerListItem
+                                assignment={assignment}
+                                editMode={editMode}
+                                updateAssignment={updateAssignment}
+                                index={index}
+                                typeIndex={typeIndex}
+                                availablePlayers={availablePlayers}
+                                selected={values[index]}
+                            />
                         );
                     })}
                 </ul>
@@ -80,3 +46,42 @@ export default class AssignmentType extends Component {
         );
     }
 }
+
+const PlayerListItem = ({
+    assignment,
+    editMode,
+    updateAssignment,
+    index,
+    typeIndex,
+    availablePlayers,
+    selected,
+}) => (
+    <li>
+        {assignment}
+        {editMode ? (
+            <div>
+                <select
+                    value={selected}
+                    onChange={ev => {
+                        updateAssignment({
+                            assignmentIndex: index,
+                            value: ev.currentTarget.value,
+                            typeIndex,
+                        });
+                    }}
+                >
+                    <option>None</option>
+                    {availablePlayers.map(({ Player }) => {
+                        return (
+                            <option value={Player.name}>
+                                {Player.name} ({Player.class.slice(0, 4)})
+                            </option>
+                        );
+                    })}
+                </select>
+            </div>
+        ) : (
+            <span>{selected}</span>
+        )}
+    </li>
+);
