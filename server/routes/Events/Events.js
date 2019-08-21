@@ -1,4 +1,4 @@
-const { Event, Schema, Attendance } = require('../../models');
+const { Event, Schema, Attendance, Player } = require('../../models');
 
 exports.find = async (req, res) => {
     try {
@@ -13,8 +13,8 @@ exports.find = async (req, res) => {
 };
 
 exports.findOne = async (req, res) => {
-    const {id} = req.params;
-    const { attendance, assignments, schema } = req.query;
+    const { id } = req.params;
+    const { attendance, assignments, schema, players } = req.query;
 
     try {
         const include = [];
@@ -31,7 +31,13 @@ exports.findOne = async (req, res) => {
             include,
         });
 
-        res.send({ event });
+        if (players) {
+            const players = await Player.findAll();
+
+            return res.send({ event, players });
+        }
+
+        return res.send({ event });
     } catch (e) {
         res.status(400).send();
     }
