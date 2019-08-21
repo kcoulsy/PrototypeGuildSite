@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 
 import { isAuthenticated } from '../../../src/lib/auth';
 import ManagerContainer from '../../../src/containers/ManagerContainer';
+import Attendace from './../../../src/components/Manager/Attendance';
 
 export default class Show extends Component {
     static getInitialProps(ctx) {
@@ -31,6 +32,7 @@ export default class Show extends Component {
         return (
             <ManagerContainer {...this.props}>
                 <h2>Event</h2>
+                <Attendace players={[]} />
             </ManagerContainer>
         );
     }

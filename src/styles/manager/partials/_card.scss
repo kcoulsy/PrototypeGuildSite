@@ -1,0 +1,82 @@
+.card-container {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    margin-bottom: 10px;
+
+    .card {
+        background: white;
+        flex: 1;
+        // height: 200px;
+        // margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: 40px;
+
+        .card-name {
+            padding: 5px;
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+            background: #717171;
+            color: white;
+        }
+        .types {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: $breakpoint) {
+    .card-container {
+        width: calc(100% - 90px);
+        flex-direction: column;
+        .card {
+            // margin: 0;
+        }
+        .buttons {
+            flex-direction: row;
+            button.save,
+            button.delete {
+                margin: 0;
+                max-height: 30px;
+            }
+        }
+    }
+}
+
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    .attendance-type {
+        min-width: 295px;
+        margin: 5px;
+        h5 {
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+    .assignment-type {
+        flex: 1 1 33%;
+        max-width: 33%;
+
+        &:not(:last-child) {
+            border-right: 1px solid grey;
+        }
+        ul {
+            list-style: none;
+            padding: 0 5px;
+            margin: 0;
+            li {
+                margin: 0;
+                padding: 8px;
+                text-decoration: none;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

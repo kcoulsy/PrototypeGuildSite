@@ -1,0 +1,33 @@
+
+.attendance-list {
+    list-style: none;
+    padding: 0;
+    li {
+      width: calc(100% - 10px);
+      text-align: left;
+      padding: 5px;
+      display: flex;
+      &:not(:last-child) {
+        border-bottom: 1px solid lightgrey;
+      }
+      span.name {
+        flex: 1;
+        // text-transform: uppercase;
+      }
+      .attendance-options {
+        flex-shrink: 0;
+        button {
+          border: 0;
+          padding: 5px;
+          cursor: pointer;
+          &.selected {
+            background: limegreen;
+          }
+          &.na {
+            background: #c95757;
+            color: white;
+          }
+        }
+      }
+    }
+  }
