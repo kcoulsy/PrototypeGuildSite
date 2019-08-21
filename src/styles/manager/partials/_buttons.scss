@@ -1,0 +1,36 @@
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    button {
+        flex: 1;
+        border: 0;
+        color: white;
+        max-height: 45px;
+        height: 45px;
+        cursor: pointer;
+        margin-top: 5px;
+        width: 50px;
+        &.save {
+            background: #45a34c;
+            &:disabled {
+                background: lighten(#45a34c, 15%);
+                color: grey;
+                cursor: danger;
+            }
+        }
+        &.edit {
+            background: #8e59bd;
+            &:disabled {
+                background: lighten(#8e59bd, 15%);
+                color: grey;
+                cursor: danger;
+            }
+            
+        }
+        &.delete {
+            background: #d83434;
+            margin-top: 5px;
+        }
+    }
+}

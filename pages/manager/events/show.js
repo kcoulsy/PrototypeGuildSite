@@ -6,6 +6,7 @@ import ReactTable from 'react-table';
 import { isAuthenticated } from '../../../src/lib/auth';
 import ManagerContainer from '../../../src/containers/ManagerContainer';
 import Attendance from './../../../src/components/Manager/Attendance';
+import Assignments from '../../../src/components/Manager/Assignments';
 
 export default class Show extends Component {
     static getInitialProps(ctx) {
@@ -33,6 +34,7 @@ export default class Show extends Component {
         });
         if (data) {
             const attendance = data.event.Attendances.reduce((acc, curr) => {
+                // if (curr.)
                 acc[curr.playerId] = curr;
                 return acc;
             }, {});
@@ -54,11 +56,18 @@ export default class Show extends Component {
         });
 
         this.setState(prevState => {
+            const attendance = {
+                ...prevState.attendance,
+            };
+            if (response.data.attendance.role !== 'none') {
+                attendance[data.playerId] = response.data.attendance
+            } else {
+                if (typeof attendance[data.playerId] !== undefined) {
+                    delete attendance[data.playerId];
+                }
+            }
             return {
-                attendance: {
-                    ...prevState.attendance,
-                    [data.playerId]: response.data.attendance,
-                },
+                attendance
             };
         });
     };
@@ -68,6 +77,14 @@ export default class Show extends Component {
             <ManagerContainer {...this.props}>
                 <h2>Event</h2>
                 <Attendance {...this.state} setGoing={this.setGoing} />
+                {this.state.event.Schema && this.state.event.Schema ? (
+                    <Assignments
+                        schema={JSON.parse(this.state.event.Schema.schema)}
+                        attendance={this.state.attendance}
+                    />
+                ) : (
+                    ''
+                )}
             </ManagerContainer>
         );
     }

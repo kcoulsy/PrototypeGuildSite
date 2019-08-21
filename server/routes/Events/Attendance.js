@@ -26,6 +26,7 @@ exports.set = async (req, res) => {
                 playerId,
                 eventId,
             },
+            include: Player
         });
 
         if (model.isNewRecord) {

@@ -24,7 +24,7 @@ exports.findOne = async (req, res) => {
         }
 
         if (attendance) {
-            include.push({ model: Attendance });
+            include.push({ model: Attendance, include: Player });
         }
 
         const event = await Event.findByPk(id, {
