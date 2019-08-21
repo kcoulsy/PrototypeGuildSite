@@ -3,21 +3,8 @@ import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 
 import AssignmentType from './AssignmentType';
-// {
-//   boss_name: 'Lucifron',
-//   types: [{
-//       name: 'Tank Assignments',
-//       valid_classes: ['warrior', 'druid'],
-//       assignments: ['Main Tank', 'Off Tank']
-//   }, {
-//       name: 'Healing assignments',
-//       valid_classes: ['priest', 'paladin', 'druid'],
-//       assignments: ['Main Tank', 'Off Tank']
-//   }],
-//   notes: [
-//       'healers raid heal when their tanks target is dead'
-//   ]
-// }
+
+import getValidPlayers from '../../lib/getValidPlayers';
 
 export default class AssignmentSection extends Component {
     state = {
@@ -37,17 +24,9 @@ export default class AssignmentSection extends Component {
             if (typeof assignments[typeIndex] === 'undefined') {
                 assignments[typeIndex] = {};
             }
-            const available =
-                Object.values(attendance).filter(player => {
-                    if (player.role === 'none') return false;
-                    return (
-                        type.valid.includes(player.role) ||
-                        type.valid.includes(
-                            player.Player && player.Player.class.toLowerCase()
-                        )
-                    );
-                }) || [];
-            // console.log("avail", available);
+
+            const available = getValidPlayers({players: attendance, valid: type.valid})
+
             type.assignments.forEach((assignment, assIndex) => {
                 if (
                     typeof assignments[typeIndex][assIndex] === 'undefined' ||
@@ -95,6 +74,7 @@ export default class AssignmentSection extends Component {
                         {types.map((type, index) => {
                             return (
                                 <AssignmentType
+                                    key={type.name}
                                     {...type}
                                     typeIndex={index}
                                     attendance={attendance}
