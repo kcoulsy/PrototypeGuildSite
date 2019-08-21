@@ -33,6 +33,12 @@ app.prepare().then(() => {
         });
     });
 
+    server.get('/manager/event/:id', (req, res) => {
+        return app.render(req, res, '/manager/events/show', {
+            id: req.params.id,
+        });
+    });
+
     server.get('*', (req, res) => {
         return handle(req, res);
     });

@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 
 import { isAuthenticated } from '../../../src/lib/auth';
 import ManagerContainer from '../../../src/containers/ManagerContainer';
+import redirect from '../../../src/lib/redirect';
 
 export default class Import extends Component {
     static getInitialProps(ctx) {
@@ -71,9 +72,7 @@ export default class Import extends Component {
                                     rowInfo.original.id
                                 ) {
                                     redirect(
-                                        `/manager/schemas/${
-                                            rowInfo.original.id
-                                        }`
+                                        `/manager/event/${rowInfo.original.id}`
                                     );
                                 }
                                 if (handleOriginal) {
