@@ -10,7 +10,7 @@ module.exports = [
     {
         method: 'get',
         path: '/events/:id',
-        handler: Events.findOne
+        handler: Events.findOne,
     },
     {
         path: '/events/create',
@@ -20,6 +20,11 @@ module.exports = [
     {
         method: 'get',
         path: '/events/:id/attendance',
-        handler: Attendance.get
-    }
+        handler: Attendance.get,
+    },
+    {
+        method: 'post',
+        path: '/attendance',
+        handler: Attendance.set,
+    },
 ];
