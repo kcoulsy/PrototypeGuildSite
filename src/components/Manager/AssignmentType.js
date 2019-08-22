@@ -20,7 +20,7 @@ const AssignmentType = ({
                 {assignments.map((assignment, index) => {
                     return (
                         <PlayerListItem
-                            key={assignment}
+                            key={`${name}_${assignment}`}
                             assignment={assignment}
                             editMode={editMode}
                             updateAssignment={updateAssignment}

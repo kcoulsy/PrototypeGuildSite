@@ -21,6 +21,8 @@ export default class Attendance extends React.Component {
             this.props.players.map((player, i) => {
                 if (this.props.attendance[player.id]) {
                     player.role = this.props.attendance[player.id].role;
+                } else {
+                    player.role = 'none';
                 }
                 return player;
             }) || []

@@ -59,13 +59,9 @@ export default class Show extends Component {
             const attendance = {
                 ...prevState.attendance,
             };
-            if (response.data.attendance.role !== 'none') {
-                attendance[data.playerId] = response.data.attendance
-            } else {
-                if (typeof attendance[data.playerId] !== undefined) {
-                    delete attendance[data.playerId];
-                }
-            }
+
+            attendance[data.playerId] = response.data.attendance
+
             return {
                 attendance
             };
