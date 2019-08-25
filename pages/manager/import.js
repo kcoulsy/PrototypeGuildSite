@@ -38,7 +38,7 @@ export default class Import extends Component {
                 <JSONInput
                     id="player_importer"
                     onChange={({jsObject}) =>
-                        this.setState({ data: jsObject, entered: true})
+                        this.setState({ players: jsObject, entered: true})
                     }
                     locale={locale}
                     height="550px"

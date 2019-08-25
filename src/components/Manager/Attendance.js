@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default class Attendance extends React.Component {
+    state ={
+        maxRank: 5
+    }
     handleClick = ev => {
         ev.preventDefault();
         ev.stopPropagation();
@@ -18,7 +21,7 @@ export default class Attendance extends React.Component {
 
     getPlayers = () => {
         return (
-            this.props.players.map((player, i) => {
+            this.props.players.filter(player => player.rankIndex <= this.state.maxRank).map((player, i) => {
                 if (this.props.attendance[player.id]) {
                     player.role = this.props.attendance[player.id].role;
                 } else {
@@ -76,6 +79,20 @@ export default class Attendance extends React.Component {
                         Attendance {going.all} / 40 ({going.tanks} Tanks,{' '}
                         {going.heals} Heals, {going.dps} DPS)
                     </span>
+                    <div className="rank-select">
+                        Minimum Rank
+                        <select value={this.state.maxRank} onChange={ev => this.setState({maxRank: ev.target.value})}>
+                            <option value={0}>Guild Master</option>
+                            <option value={1}>Officer</option>
+                            <option value={2}>Trial Officer</option>
+                            <option value={3}>Leader</option>
+                            <option value={4}>Veteran</option>
+                            <option value={5}>Raider</option>
+                            <option value={6}>Trial</option>
+                            <option value={7}>Member</option>
+                            <option value={8}>Social</option>
+                        </select>
+                    </div>
                     <div className="types">
                         {Object.entries(classFiltered).map(
                             ([playerClass, players]) => {
@@ -130,10 +147,10 @@ const AttendanceUser = ({ player, playerClass, handleClick }) => (
                     Tank
                 </button>
             ) : null}
-            {['paladin', 'priest', 'druid'].includes(playerClass) ? (
+            {['paladin', 'priest', 'druid'].includes(playerClass.toLowerCase()) ? (
                 <button
                     onClick={handleClick}
-                    className={player.role === 'heal' ? 'selected' : ''}
+                    className={player.role.toLowerCase() === 'heal' ? 'selected' : ''}
                     value="heal"
                 >
                     Heal
@@ -141,7 +158,7 @@ const AttendanceUser = ({ player, playerClass, handleClick }) => (
             ) : null}
             <button
                 onClick={handleClick}
-                className={player.role === 'dps' ? 'selected' : ''}
+                className={player.role.toLowerCase() === 'dps' ? 'selected' : ''}
                 value="dps"
             >
                 DPS

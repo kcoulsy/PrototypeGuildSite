@@ -26,6 +26,17 @@
         .types {
             display: flex;
         }
+        .rank-select {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            padding: 5px;
+            background: #717171;
+            color: white;
+            select {
+                margin-left: 10px;
+            }
+        }
     }
 }
 
