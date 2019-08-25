@@ -20,7 +20,7 @@ export default class Login extends Component {
         return (
             <AuthContainer>
                 <h2>Login</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form className="login" onSubmit={this.handleSubmit}>
                     <input
                         name="username"
                         value={this.state.username}

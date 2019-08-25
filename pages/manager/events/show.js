@@ -60,23 +60,26 @@ export default class Show extends Component {
                 ...prevState.attendance,
             };
 
-            attendance[data.playerId] = response.data.attendance
+            attendance[data.playerId] = response.data.attendance;
 
             return {
-                attendance
+                attendance,
             };
         });
     };
 
     render() {
+        const { id } = this.props;
+        const { event, attendance } = this.state;
         return (
             <ManagerContainer {...this.props}>
                 <h2>Event</h2>
                 <Attendance {...this.state} setGoing={this.setGoing} />
-                {this.state.event.Schema && this.state.event.Schema ? (
+                {event.Schema && event.Schema ? (
                     <Assignments
-                        schema={JSON.parse(this.state.event.Schema.schema)}
-                        attendance={this.state.attendance}
+                        schema={JSON.parse(event.Schema.schema)}
+                        attendance={attendance}
+                        eventId={parseInt(id, 10)}
                     />
                 ) : (
                     ''
